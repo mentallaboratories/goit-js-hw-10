@@ -1,0 +1,45 @@
+<div class="country-item-big">
+    <div class="country-flag-wrap-big">
+        <img class="country-flag-img-big" src={{flags.svg}} width="640" height="400" alt="{{name}}">
+        {{!-- <svg class="country-flag" width="640" height="400">
+            <use url={{flags.svg}}>
+
+            </use>
+        </svg> --}}
+    </div>
+    <h1 class="country-title bold">{{name}}</h1>
+</div>
+<ul>
+    <li class="country-item">
+        <div class="small-text bold">
+            Capital:
+        </div>
+        <div class="small-text"> 
+            {{capital}}
+        </div>
+    </li>
+    <li class="country-item">
+        <div class="small-text bold">
+            Population:
+        </div>
+        <div class="small-text"> 
+            {{population}}
+        </div>
+    </li>
+    <li class="country-item">
+        <div class="small-text bold">
+            Languages:
+        </div>
+        <ul class="country-item">
+                {{#each languages}}
+                <li class="country-item">
+                    <p class="small-text">{{name}}</p>
+                </li>
+                {{/each}}
+        </ul>
+    </li>
+</ul>
+    
+    
+   
+        
