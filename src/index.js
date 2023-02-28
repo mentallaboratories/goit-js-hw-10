@@ -27,8 +27,9 @@ refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY,
 
 function onSearch(e){
   const data = e.currentTarget.value;
-  if (data !== ''){
+  if (data !== '' || data !== ' '){
   countriesApiService.query = data.trim();
+  //console.log(data.trim());
   countriesApiService.fetchCountries().then(renderCountryCard).catch(error => console.log(error))
   }
 };
