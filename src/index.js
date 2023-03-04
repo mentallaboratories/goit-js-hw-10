@@ -18,7 +18,10 @@ const refs = {
 
 const DEBOUNCE_DELAY = 300;
 
-refs.inputEl.addEventListener('input',debounce(onSearch, DEBOUNCE_DELAY));
+refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY,
+  {leading: true,
+    trailing: false}
+    ));
 
 
 
