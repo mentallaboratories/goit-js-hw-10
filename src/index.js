@@ -3,7 +3,7 @@ import './css/styles.css';
 import cardCountryItemTmp from './templates/cardCountryItemTmp.hbs';
 import cardCountryTmp from './templates/cardCountryTmp.hbs';
 
-import debounce from 'lodash.debounce';
+//import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 
 import CountriesApiService from './js/CountriesApi.js';
@@ -18,10 +18,7 @@ const refs = {
 
 const DEBOUNCE_DELAY = 300;
 
-refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY,
-  {leading: true,
-    trailing: false}
-    ));
+refs.inputEl.addEventListener('input',_.debounce(onSearch, DEBOUNCE_DELAY));
 
 
 
