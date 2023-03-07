@@ -18,15 +18,12 @@ const refs = {
 
 const DEBOUNCE_DELAY = 300;
 
-refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY,
-  {leading: true,
-    trailing: false}
-    ));
+refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 
 
 function onSearch(e){
-  const data = e.currentTarget.value.trim();
+  let data = e.currentTarget.value.trim();
   if (data){
   countriesApiService.query = data;
   //console.log(data.trim());
