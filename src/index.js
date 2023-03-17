@@ -20,14 +20,15 @@ const DEBOUNCE_DELAY = 300;
 
 refs.inputEl.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
-let data = '';
+//let data = '';
 
 function onSearch(e){
-  data = e.currentTarget.value.trim();
+  console.log(e.target.value);
+  const data = e.target.value.trim();
   if (data){
-  countriesApiService.query = data;
+    countriesApiService.query = data;
   //console.log(data.trim());
-  countriesApiService.fetchCountries().then(renderCountryCard).catch(error => console.log(error))
+    countriesApiService.fetchCountries().then(renderCountryCard).catch(error => console.log(error))
   }
 };
 
